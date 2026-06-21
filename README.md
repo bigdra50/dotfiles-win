@@ -9,6 +9,10 @@ Windows 用 dotfiles。macOS/Linux 版は [dotfiles](https://github.com/bigdra50
 ```
 dotfiles-win/
 ├── install.ps1            # シンボリックリンク作成
+├── .pre-commit-config.yaml # gitleaks pre-commit フック
+├── .github/
+│   ├── workflows/gitleaks.yml # シークレットスキャン CI
+│   └── dependabot.yml     # GitHub Actions の更新監視
 ├── powershell/            # PowerShell 7 プロファイル
 │   ├── Microsoft.PowerShell_profile.ps1
 │   ├── functions/         # 機能別モジュール (Aliases, PSReadLine, OhMyPosh 等)
@@ -58,8 +62,25 @@ winget import -i packages/winget.json
 scoop import packages/scoop.json
 ```
 
+## シークレット対策
+
+多層でシークレットの混入を防ぐ。
+
+- pre-commit (gitleaks): commit 前にローカルで検知
+- GitHub push protection: push 時にブロック
+- secret scanning: 既存履歴を継続監視
+- gitleaks CI: push/PR 毎に全履歴スキャン
+
+pre-commit フックの有効化（初回のみ）:
+
+```bash
+pre-commit install
+gitleaks git   # 手動で全履歴スキャン
+```
+
 ## 前提
 
 - PowerShell 7 (`pwsh`)
 - 開発者モード有効 (symlink 作成用)
 - winget / scoop
+- pre-commit / gitleaks (シークレット対策を使う場合)
