@@ -1,0 +1,19 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2026-06-14T22:55:30+09:00",
+            "Manifests": 1577
+        }
+    ],
+    "apps": [
+        {
+            "Source": "https://github.com/bigdra50/unilyze/releases/latest/download/unilyze.json",
+            "Info": "",
+            "Version": "0.5.1",
+            "Name": "unilyze",
+            "Updated": "2026-06-15T00:35:49.9588864+09:00"
+        }
+    ]
+}
