@@ -15,16 +15,16 @@ $ErrorActionPreference = "Stop"
 $repo = $PSScriptRoot
 
 # リンク対象: @{ Link = 配置先; Target = リポジトリ内パス }
-$psHome = Join-Path $HOME "Documents\PowerShell"
+$psDir = Join-Path $HOME "Documents\PowerShell"
 $wtState = Join-Path $env:LOCALAPPDATA "Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
 
 $links = @(
-    @{ Link = Join-Path $psHome "Microsoft.PowerShell_profile.ps1"; Target = "$repo\powershell\Microsoft.PowerShell_profile.ps1" }
-    @{ Link = Join-Path $psHome "profile.ps1";                       Target = "$repo\powershell\profile.ps1" }
-    @{ Link = Join-Path $psHome "powershell.config.json";           Target = "$repo\powershell\powershell.config.json" }
-    @{ Link = Join-Path $psHome "packages.json";                    Target = "$repo\powershell\packages.json" }
-    @{ Link = Join-Path $psHome "CLAUDE.md";                        Target = "$repo\powershell\CLAUDE.md" }
-    @{ Link = Join-Path $psHome "functions";                        Target = "$repo\powershell\functions" }
+    @{ Link = Join-Path $psDir "Microsoft.PowerShell_profile.ps1"; Target = "$repo\powershell\Microsoft.PowerShell_profile.ps1" }
+    @{ Link = Join-Path $psDir "profile.ps1";                       Target = "$repo\powershell\profile.ps1" }
+    @{ Link = Join-Path $psDir "powershell.config.json";           Target = "$repo\powershell\powershell.config.json" }
+    @{ Link = Join-Path $psDir "packages.json";                    Target = "$repo\powershell\packages.json" }
+    @{ Link = Join-Path $psDir "CLAUDE.md";                        Target = "$repo\powershell\CLAUDE.md" }
+    @{ Link = Join-Path $psDir "functions";                        Target = "$repo\powershell\functions" }
     @{ Link = Join-Path $wtState "settings.json";                   Target = "$repo\windows-terminal\settings.json" }
 )
 
