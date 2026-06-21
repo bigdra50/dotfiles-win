@@ -1,0 +1,16 @@
+# ローカルオーバーライド (マシン固有)
+*.local.ps1
+.pwshenv.local.ps1
+
+# バックアップ
+*.bak
+*.bak.*
+*.backup.*
+
+# PowerShell の外部モジュール (PowerShellGet 管理)
+powershell/Modules/
+powershell/Scripts/
+
+# ログ・キャッシュ
+*.log
+.omp_installed
